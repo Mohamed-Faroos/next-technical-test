@@ -36,7 +36,7 @@ const Home = () => {
             })
         } if (stateItunesData.data.count === 0) {
             return (
-                <div className="itunes-no-result-container" >
+                <div data-testid="itunes-no-result" className="itunes-no-result-container" >
                     <div>{properties.NO_RESULT_LBL}</div>
                 </div>
             )

@@ -5,7 +5,7 @@ import { Itunes } from '../../../common/interfaces';
 import { TUNES_DATA_TYPE } from '../../../common/enums';
 
 describe('<ITunesCard />', () => {
-
+    /* test - artist card rendering */
     it('should render artist item card', () => {
         let tunes: Itunes = {
             wrapperType: TUNES_DATA_TYPE.ARTIST,
@@ -15,6 +15,7 @@ describe('<ITunesCard />', () => {
         expect(screen.getByText(/Artist/)).toBeInTheDocument();
     });
 
+    /* test - album card rendering */
     it('should render album item card', () => {
         let tunes: Itunes = {
             wrapperType: TUNES_DATA_TYPE.COLLECTION,
@@ -25,6 +26,7 @@ describe('<ITunesCard />', () => {
         expect(screen.getByText(/Album •/)).toBeInTheDocument();
     });
 
+    /* test - song card rendering */
     it('should render song item card', () => {
         let tunes: Itunes = {
             wrapperType: TUNES_DATA_TYPE.TRACK,
@@ -34,5 +36,4 @@ describe('<ITunesCard />', () => {
         render(<ITunesCard tunes={tunes} />);
         expect(screen.getByText(/Song •/)).toBeInTheDocument();
     });
-    
 });

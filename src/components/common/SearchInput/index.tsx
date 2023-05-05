@@ -19,7 +19,7 @@ const SearchInput = (props: SearchInputProps) => {
     const renderClearButton = () => {
         if (searchValue) {
             return (
-                <IconButton onClick={onClearInput} className="itunes-close-button" size="medium">
+                <IconButton data-testid="itunes-close-button" onClick={onClearInput} className="itunes-close-button" size="medium">
                     <CloseRounded fontSize="inherit" />
                 </IconButton>
             )
@@ -29,13 +29,14 @@ const SearchInput = (props: SearchInputProps) => {
         <div className="itunes-search-input-container">
             <SearchSharp className="itunes-search-icon" fontSize="inherit" />
             <input
+                data-testid="itunes-search-input"          
                 className="itunes-search-input"
                 type="search"
                 value={searchValue}
                 placeholder={properties.SEARCH_INPUT_PLACEHOLDER}
                 onChange={onChangeInputValue}
             />
-            <Button disabled={!searchValue} onClick={onSubmit} className="itunes-search-button">
+            <Button data-testid="itunes-search-button" disabled={!searchValue} onClick={onSubmit} className="itunes-search-button">
                 {properties.SEARCH_BUTTON_LBL}
             </Button>
             {renderClearButton()}
