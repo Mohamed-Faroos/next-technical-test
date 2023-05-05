@@ -20,6 +20,10 @@ body {
     color: $secondary-color;
 }
 
+.itunes-loading-progress {
+    background-color: $white-color !important;
+}
+
 .itunes-search-input-container {
     position: relative;
     margin-top: 25px;
@@ -31,7 +35,7 @@ body {
         height: 45px;
         width: 100%;
         padding-left: 40px;
-        padding-right: 120px;
+        padding-right: 150px;
         border-radius: 12px;
         border-width: 0;
         border-color: $primary-color;
@@ -73,7 +77,7 @@ body {
     .itunes-close-button {
         position: absolute;
         top: 3px;
-        right: 100px;
+        right: 120px;
         color: $primary-color;
         font-size: 14px;
         font-weight: 900;
@@ -100,6 +104,15 @@ body {
     overflow: auto;
     float: left;
     position: relative;
+}
+
+.itunes-no-result-container {
+    display: flex;
+    min-height: 65vh;
+    height: 70vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .itunes-card-container {

@@ -1,4 +1,4 @@
-export interface SearchApiParams {
+export interface ISearchApiParams {
     term: string,
     limit: number,
     media: string,
