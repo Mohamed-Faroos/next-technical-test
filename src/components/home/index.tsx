@@ -47,9 +47,9 @@ const Home = () => {
     const renderLoading = () => {
         if (stateItunesData.loading) {
             return (
-                <Box sx={{ width: '100%' }}>
+                <div className="itunes-loading-container">
                     <LinearProgress className="itunes-loading-progress" />
-                </Box>
+                </div>
             )
         }
     }
