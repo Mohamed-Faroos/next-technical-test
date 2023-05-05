@@ -9,13 +9,9 @@ const useHomeAction = () => {
 
     const [searchText, setSearchText] = useState<string>("");
     const [isLastElement, setIsLastElement] = useState<boolean>(false)
-    const [dataLimit, setDataLimit] = useState<number>(10);
+    const [dataLimit, setDataLimit] = useState<number>(0);
 
     const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(searchItunesDataClear());
-    }, []);
 
     /* call api using dispatch method */
     const getSearchedData = async () => {
@@ -29,23 +25,24 @@ const useHomeAction = () => {
         dispatch(searchItunesData(searchParams));
     }
 
+    /* this method indicate while changing search input value */
     const onChangeInputText = (text: string) => {
         setSearchText(text);
     }
 
-    /* indicate while click on search button */
+    /* this method indicate while click on search button */
     const onSearch = () => {
-        getSearchedData();
-    }
-
-    /* indicate while click on clear button in search input */
-    const onClearSearchInput = () => {
-        setSearchText("");
-        dispatch(searchItunesDataClear());
         setDataLimit(10);
     }
 
-    /* this is reference for last iten in list */
+    /* this method indicate while click on clear button in search input */
+    const onClearSearchInput = () => {
+        setSearchText("");
+        dispatch(searchItunesDataClear());
+        setDataLimit(0);
+    }
+
+    /* this is reference for last item in list */
     const refFinalElement = useInViewEffect(
         ([entry], observer) => {
             if (entry.isIntersecting) {
@@ -56,18 +53,24 @@ const useHomeAction = () => {
         { threshold: 0.5 }
     );
 
-    /* this is for update page size while reach the final element */
+    /* this is for update data while reach the last element */
     useEffect(() => {
         if (isLastElement) {
             setDataLimit((dataLimit) => dataLimit + 10);
         }
     }, [isLastElement]);
 
+    /* this is for get scroll pagination data retrieving method while increasing data limit */
     useEffect(() => {
-        if (dataLimit > 10) {
+        if (dataLimit > 0) {
             getSearchedData();
         }
     }, [dataLimit]);
+
+    /* this hook will data while initial loading */
+    useEffect(() => {
+        dispatch(searchItunesDataClear());
+    }, []);
 
     return { refFinalElement, onChangeInputText, onClearSearchInput, onSearch }
 }

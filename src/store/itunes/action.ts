@@ -27,7 +27,6 @@ export const searchItunesData = (payload: ISearchApiParams) => {
         dispatch(searchItunesDataStart());
         getItunesSearchDataAPI(payload)
             .then((res: any) => {
-                console.log("res:", res);
                 let resultData = res.data;
                 let dataList: Itunes[] = [];
                 let allTunes : ItunesData = {

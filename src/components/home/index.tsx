@@ -14,6 +14,7 @@ const Home = () => {
     const stateItunesData = useAppSelector((state: RootState) => state.itunes);
     const { refFinalElement, onChangeInputText, onClearSearchInput, onSearch } = useHomeAction();
 
+    /* rendering list items or not found result UI */
     const renderItemList = () => {
         if (stateItunesData.data.tunes.length > 0) {
             return stateItunesData.data.tunes.map((tunes: Itunes, index: number) => {
@@ -42,6 +43,7 @@ const Home = () => {
         }
     }
 
+    /* rendering Loading UI */
     const renderLoading = () => {
         if (stateItunesData.loading) {
             return (
@@ -54,10 +56,14 @@ const Home = () => {
     return (
         <Container className="itunes-container" maxWidth={"sm"}>
             <div className="itunes-header">{properties.MAIN_SEARCH_HEADER}</div>
-            <SearchInput onChangeInputText={onChangeInputText} onClear={onClearSearchInput} onSubmit={onSearch} />
+            <SearchInput
+                onChangeInputText={onChangeInputText}
+                onClear={onClearSearchInput}
+                onSubmit={onSearch}
+            />
+            {renderLoading()}
             <div className="itunes-result-container">
                 {renderItemList()}
-                {renderLoading()}
             </div>
         </Container>
     )

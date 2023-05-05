@@ -9,7 +9,9 @@ export type ITunesCardProps = {
     tunes: Itunes
 }
 
+/* rendering different cards using wrapper type */
 const renderCards = (tunes: Itunes) => {
+    /* render if wrapper-type is artist */
     if (tunes.wrapperType === TUNES_DATA_TYPE.ARTIST) {
         return (
             <div className="itunes-card-container">
@@ -20,6 +22,7 @@ const renderCards = (tunes: Itunes) => {
                 </div>
             </div>
         )
+    /* render if wrapper-type is collection */
     } else if (tunes.wrapperType === TUNES_DATA_TYPE.COLLECTION) {
         return (
             <div className="itunes-card-container">
@@ -30,6 +33,7 @@ const renderCards = (tunes: Itunes) => {
                 </div>
             </div>
         )
+    /* render if wrapper-type is track */
     } else if (tunes.wrapperType === TUNES_DATA_TYPE.TRACK) {
         return (
             <div className="itunes-card-container">
