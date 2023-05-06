@@ -33,6 +33,14 @@ npm start
 
 open chrome browser and go to [localhost:4000](http://localhost:4000)
 
+## How to test 
+
+In the project directory
+
+```bash
+npm test
+```
+
 ## Used Libraries
 material-ui : https://v4.mui.com/getting-started/installation/     
 axios : https://axios-http.com/docs/intro  
