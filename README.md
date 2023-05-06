@@ -29,7 +29,7 @@ start project
 npm start
 ```
 
-open chrome browser and go to [localhost:4000](localhost:4000)
+open chrome browser and go to [localhost:4000](http://localhost:4000)
 
 ## Used Libraries
 material-ui : https://v4.mui.com/getting-started/installation/     
