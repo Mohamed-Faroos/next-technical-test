@@ -12,6 +12,11 @@ clone the project
 git clone https://github.com/Mohamed-Faroos/next-technical-test.git
 ```
 
+go to project directory
+```bash
+cd next-technical-test
+```
+
 install node_modules
 
 ```bash
@@ -24,4 +29,14 @@ start project
 npm start
 ```
 
-open browser and go to localhost:4000
+open chrome browser and go to localhost:4000
+
+## Used Libraries
+material-ui : https://v4.mui.com/getting-started/installation/
+axios : https://axios-http.com/docs/intro
+react-redux : https://redux.js.org/introduction/getting-started
+redux-thunk : https://github.com/reduxjs/redux-thunk
+redux-persist : https://www.npmjs.com/package/redux-persist
+react-hook-inview : https://www.npmjs.com/package/react-hook-inview
+sass : https://sass-lang.com/install
+jest : https://jestjs.io/docs/getting-started
