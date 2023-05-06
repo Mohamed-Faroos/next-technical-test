@@ -1,12 +1,11 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducers from './rootReducer';
-import { persistReducer } from 'redux-persist';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import rootReducers from "./rootReducer";
+import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { persistStore } from 'redux-persist';
 
 const persistConfig = {
-  key: 'itunes',
+  key: "itunes",
   storage,
 };
 

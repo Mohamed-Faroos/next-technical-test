@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import configureStore from "redux-mock-store";
+
 import Home from "../../../components/home";
 
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-
-describe('<Home/>', () => {
+describe("<Home/>", () => {
 
     beforeEach(() => {
         const mockIntersectionObserver = jest.fn();
@@ -30,19 +30,19 @@ describe('<Home/>', () => {
                 }
             }
         };
-        let store = mockStore(initialState);
+        const store = mockStore(initialState);
         render(
             <Provider store={store}>
                 <Home />
             </Provider>
         );
-        let elements = screen.queryAllByTestId("itunes-card")
+        const elements = screen.queryAllByTestId("itunes-card");
         expect(elements.length).toBe(0);
     });
 
 
     /* test - rendering 1 list Item in home */
-    it("render list items in home", async () => {
+    it("render list 1 item in home", async () => {
         const initialState = {
             itunes: {
                 count: 0,
@@ -58,14 +58,14 @@ describe('<Home/>', () => {
                 }
             }
         };
-        let store = mockStore(initialState);
+        const store = mockStore(initialState);
 
         render(
             <Provider store={store}>
                 <Home />
             </Provider>
         );
-        let elements = screen.getAllByTestId("itunes-card");
+        const elements = screen.getAllByTestId("itunes-card");
         expect(elements.length).toBe(1);
     });
 
@@ -96,14 +96,14 @@ describe('<Home/>', () => {
                 }
             }
         };
-        let store = mockStore(initialState);
+        const store = mockStore(initialState);
 
         render(
             <Provider store={store}>
                 <Home />
             </Provider>
         );
-        let elements = screen.getAllByTestId("itunes-card");
+        const elements = screen.getAllByTestId("itunes-card");
         expect(elements.length).toBe(3);
     });
 
@@ -117,7 +117,7 @@ describe('<Home/>', () => {
                 }
             }
         };
-        let store = mockStore(initialState);
+        const store = mockStore(initialState);
 
         render(
             <Provider store={store}>

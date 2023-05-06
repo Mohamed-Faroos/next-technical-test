@@ -27,12 +27,12 @@ export const searchItunesData = (payload: ISearchApiParams) => {
         dispatch(searchItunesDataStart());
         getItunesSearchDataAPI(payload)
             .then((res: any) => {
-                let resultData = res.data;
-                let dataList: Itunes[] = [];
+                const resultData = res.data;
+                const dataList: Itunes[] = [];
                 let allTunes : ItunesData = {
                     count: null,
                     tunes:[]
-                }
+                };
                 /* filter arrange required data to render list */
                 resultData.results.map((tunes: any) => {
 
@@ -67,17 +67,16 @@ export const searchItunesData = (payload: ISearchApiParams) => {
                         };
                     }
                     dataList.push(data);
-                })
+                });
 
                 allTunes = {
                     count: resultData.resultCount,
                     tunes: dataList
-                }
+                };
 
                 dispatch(searchItunesDataSuccess(allTunes));
             }).catch((err: any) => {
-                console.log(err);
                 dispatch(searchItunesDataError(err.message));
-            })
+            });
     };
 };

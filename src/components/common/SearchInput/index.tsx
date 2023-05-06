@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button, IconButton } from '@material-ui/core';
-import { CloseRounded, SearchSharp } from '@material-ui/icons';
+import React from "react";
+import { Button, IconButton } from "@material-ui/core";
+import { CloseRounded, SearchSharp } from "@material-ui/icons";
 
-import useSearchInputAction from './useSearchInputAction';
-import * as properties from './../../../common/constants/properties';
+import useSearchInputAction from "./useSearchInputAction";
+import * as properties from "./../../../common/constants/properties";
 
 export type SearchInputProps = {
     onChangeInputText(text: string): void,
@@ -22,9 +22,9 @@ const SearchInput = (props: SearchInputProps) => {
                 <IconButton data-testid="itunes-close-button" onClick={onClearInput} className="itunes-close-button" size="medium">
                     <CloseRounded fontSize="inherit" />
                 </IconButton>
-            )
+            );
         }
-    }
+    };
     return (
         <div className="itunes-search-input-container">
             <SearchSharp className="itunes-search-icon" fontSize="inherit" />
@@ -42,6 +42,6 @@ const SearchInput = (props: SearchInputProps) => {
             {renderClearButton()}
         </div>
     );
-}
+};
 
 export default SearchInput;

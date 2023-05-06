@@ -1,4 +1,4 @@
-import { ItunesData } from ".."
+import { ItunesData } from "..";
 
 export type ItunesState = {
     data: ItunesData,

@@ -5,5 +5,5 @@ export const ARTIST_LBL = "Artist";
 export const ALBUM_LBL = "Album • ";
 export const SONG_LBL = "Song • ";
 
-export const SEARCH_BUTTON_LBL = "search"
-export const SEARCH_INPUT_PLACEHOLDER = "Artists, Albums and Songs"
+export const SEARCH_BUTTON_LBL = "search";
+export const SEARCH_INPUT_PLACEHOLDER = "Artists, Albums and Songs";

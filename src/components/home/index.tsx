@@ -1,5 +1,5 @@
-import React from "react"
-import { Box, Container, Divider, LinearProgress } from "@material-ui/core";
+import React from "react";
+import { Container, Divider, LinearProgress } from "@material-ui/core";
 
 import SearchInput from "../common/SearchInput";
 import { Itunes } from "../../common/interfaces";
@@ -7,7 +7,7 @@ import ITunesCard from "../common/ITunesCard";
 import { useAppSelector } from "../../store/useStore";
 import { RootState } from "../../store/store";
 import useHomeAction from "./useHomeAction";
-import * as properties from './../../common/constants/properties';
+import * as properties from "./../../common/constants/properties";
 
 const Home = () => {
 
@@ -24,24 +24,24 @@ const Home = () => {
                             <Divider />
                             <ITunesCard tunes={tunes} />
                         </div>
-                    )
+                    );
                 } else {
                     return (
                         <div key={index}>
                             <Divider />
                             <ITunesCard tunes={tunes} />
                         </div>
-                    )
+                    );
                 }
-            })
-        } if (stateItunesData.data.count === 0) {
+            });
+        } else if (stateItunesData.data.count === 0) {
             return (
                 <div data-testid="itunes-no-result" className="itunes-no-result-container" >
                     <div>{properties.NO_RESULT_LBL}</div>
                 </div>
-            )
+            );
         }
-    }
+    };
 
     /* rendering Loading UI */
     const renderLoading = () => {
@@ -50,9 +50,9 @@ const Home = () => {
                 <div className="itunes-loading-container">
                     <LinearProgress className="itunes-loading-progress" />
                 </div>
-            )
+            );
         }
-    }
+    };
     return (
         <Container className="itunes-container" maxWidth={"sm"}>
             <div className="itunes-header">{properties.MAIN_SEARCH_HEADER}</div>
@@ -66,7 +66,7 @@ const Home = () => {
                 {renderItemList()}
             </div>
         </Container>
-    )
-}
+    );
+};
 
 export default Home;

@@ -1,5 +1,5 @@
-import * as TYPES from './types';
-import { ItunesState } from '../../common/interfaces';
+import * as TYPES from "./types";
+import { ItunesState } from "../../common/interfaces";
 
 const initialState : ItunesState = {
     loading: false,
@@ -36,11 +36,11 @@ const itunesReducer = (state = initialState, action:any) => {
           data: { count : null, tunes:[] },
           loading: false,
           error: null
-        }
+        };
       default:
         return state;
     }
-  }
+  };
 
   export default itunesReducer;
   
