@@ -15,7 +15,7 @@ const renderCards = (tunes: Itunes) => {
     /* render if wrapper-type is artist */
     if (tunes.wrapperType === TUNES_DATA_TYPE.ARTIST) {
         return (
-            <div>
+            <div className="itunes-card-container">
                 <Avatar className="itunes-card-image-artist" sizes="lg" alt={tunes.artistName} src={tunes.artworkUrl} />
                 <div className="itunes-card-detail-view">
                     <div className="itunes-card-title">{tunes.artistName}</div>
@@ -26,7 +26,7 @@ const renderCards = (tunes: Itunes) => {
     /* render if wrapper-type is collection */
     } else if (tunes.wrapperType === TUNES_DATA_TYPE.COLLECTION) {
         return (
-            <div>
+            <div className="itunes-card-container">
                 <img className="itunes-card-image-others" alt={tunes.artistName} src={tunes.artworkUrl} />
                 <div className="itunes-card-detail-view">
                     <div className="itunes-card-title">{tunes.collectionName}</div>
@@ -37,7 +37,7 @@ const renderCards = (tunes: Itunes) => {
     /* render if wrapper-type is track */
     } else if (tunes.wrapperType === TUNES_DATA_TYPE.TRACK) {
         return (
-            <div>
+            <div className="itunes-card-container">
                 <img className="itunes-card-image-others" alt={tunes.artistName} src={tunes.artworkUrl} />
                 <div className="itunes-card-detail-view">
                     <div className="itunes-card-title">{tunes.trackName}</div>
@@ -50,7 +50,7 @@ const renderCards = (tunes: Itunes) => {
 
 const ITunesCard = (props: ITunesCardProps) => {
     return (
-        <div data-testid={"itunes-card"} className="itunes-card-container">
+        <div data-testid={"itunes-card"}>
             {renderCards(props.tunes)}
         </div>
     );

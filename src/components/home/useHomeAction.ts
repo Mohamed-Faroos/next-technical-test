@@ -62,10 +62,13 @@ const useHomeAction = () => {
         }
     }, [isLastElement]);
 
+    useEffect(() => {
+        getSearchedData();
+    },[getSearchedData]);
+
     /* this hook will load initially */
     useEffect(() => {
         dispatch(searchItunesDataClear());
-        getSearchedData();
     }, []);
 
     return { refFinalElement, onChangeInputText, onClearSearchInput, onSearch };
